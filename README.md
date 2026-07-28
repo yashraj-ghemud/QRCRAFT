@@ -2,6 +2,8 @@
 
 🎨 **AI-Powered QR Code Studio** - Generate, customize, scan, and track beautiful QR codes with AI superpowers.
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy)
+
 ## ✨ Features
 
 - 🎯 **16 Content Types**: URL, WhatsApp, Instagram, WiFi, vCard, Email, SMS, and more
@@ -24,10 +26,18 @@
 ## 🛠️ Installation
 
 ```bash
+# Clone repository
+git clone https://github.com/yashraj-ghemud/QRCRAFT.git
+cd QRCRAFT
+
 # Install dependencies
 npm install
 
-# Setup database
+# Setup environment variables
+cp .env.example .env
+# Edit .env and add your API keys
+
+# Generate Prisma client and setup database
 npm run db:generate
 npm run db:push
 
@@ -35,15 +45,71 @@ npm run db:push
 npm run dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000)
+
 ## 🔑 Environment Variables
 
-Create a `.env` file:
+Create a `.env` file in the root directory:
 
 ```env
-DATABASE_URL="file:./dev.db"
-GROQ_API_KEY="your_groq_api_key"
-OPENROUTER_API_KEY="your_openrouter_api_key"
+DATABASE_URL="file:./prisma/dev.db"
+GROQ_API_KEY="your_groq_api_key_here"
+OPENROUTER_API_KEY="your_openrouter_api_key_here"
 ```
+
+### Getting API Keys:
+
+- **Groq**: Sign up at [console.groq.com](https://console.groq.com/)
+- **OpenRouter**: Sign up at [openrouter.ai](https://openrouter.ai/)
+
+## 📦 Production Deployment
+
+### Deploy to Render:
+
+1. Fork this repository
+2. Sign up at [render.com](https://render.com)
+3. Click "New +" → "Web Service"
+4. Connect your GitHub repository
+5. Configure:
+   - **Build Command**: `npm ci && npm run build`
+   - **Start Command**: `npm start`
+   - **Environment Variables**:
+     - `DATABASE_URL`: `file:./prisma/dev.db`
+     - `GROQ_API_KEY`: Your Groq API key
+     - `OPENROUTER_API_KEY`: Your OpenRouter API key
+     - `NODE_ENV`: `production`
+6. Deploy!
+
+### Deploy to Vercel:
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel --prod
+```
+
+## 🧪 Scripts
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm start            # Start production server
+npm run lint         # Run ESLint
+npm run db:generate  # Generate Prisma client
+npm run db:push      # Push schema to database
+```
+
+## 🐛 Troubleshooting
+
+### Build Errors
+
+If you encounter module resolution errors, ensure all dependencies are in the `dependencies` section, not `devDependencies`.
+
+### Database Issues
+
+For serverless deployments (Vercel, Cloudflare), use Vercel Postgres or Turso instead of SQLite.
 
 ## 📝 License
 
@@ -52,3 +118,7 @@ MIT
 ---
 
 Built with ❤️ by [Yashraj Ghemud](https://github.com/yashraj-ghemud)
+
+## 🌟 Show your support
+
+Give a ⭐️ if this project helped you!

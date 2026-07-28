@@ -3,10 +3,13 @@ services:
     name: qrcraft
     runtime: node
     plan: free
-    buildCommand: npm install && npm run build && npm run db:generate
+    region: oregon
+    buildCommand: npm ci && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_VERSION
         value: 20.11.0
       - key: NODE_ENV
         value: production
+    healthCheckPath: /api/route
+    autoDeploy: true

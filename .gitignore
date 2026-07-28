@@ -19,6 +19,7 @@ node_modules
 
 # production
 /build
+.next/standalone
 
 # misc
 .DS_Store
@@ -32,14 +33,16 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
 
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local files
 local-*
 .claude
 .z-ai-config
@@ -48,7 +51,22 @@ dev.log
 dev.out.log
 test
 prompt
-
 server.log
+
+# Database
+prisma/dev.db
+prisma/dev.db-journal
+dev.db
+dev.db-journal
+*.db
+*.db-journal
+
 # Skills directory
 /skills/
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
