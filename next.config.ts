@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  // Remove standalone mode - use regular Next.js server
+  // output: "standalone",
 
   // Production optimizations
   typescript: {
