@@ -11,5 +11,13 @@ services:
         value: 20.11.0
       - key: NODE_ENV
         value: production
+      - key: DATABASE_URL
+        value: file:./prisma/dev.db
+      - key: NEXT_PUBLIC_APP_URL
+        value: https://qrcraft-gura.onrender.com
+      - key: GROQ_API_KEY
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
     healthCheckPath: /api/route
     autoDeploy: true

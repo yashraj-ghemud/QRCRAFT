@@ -53,6 +53,7 @@ Create a `.env` file in the root directory:
 
 ```env
 DATABASE_URL="file:./prisma/dev.db"
+NEXT_PUBLIC_APP_URL="http://localhost:3000"
 GROQ_API_KEY="your_groq_api_key_here"
 OPENROUTER_API_KEY="your_openrouter_api_key_here"
 ```
@@ -73,8 +74,9 @@ OPENROUTER_API_KEY="your_openrouter_api_key_here"
 5. Configure:
    - **Build Command**: `npm ci && npm run build`
    - **Start Command**: `npm start`
-   - **Environment Variables**:
+   - **Environment Variables** (⚠️ IMPORTANT - All are required):
      - `DATABASE_URL`: `file:./prisma/dev.db`
+     - `NEXT_PUBLIC_APP_URL`: `https://your-app-name.onrender.com` (use your actual Render URL)
      - `GROQ_API_KEY`: Your Groq API key
      - `OPENROUTER_API_KEY`: Your OpenRouter API key
      - `NODE_ENV`: `production`
