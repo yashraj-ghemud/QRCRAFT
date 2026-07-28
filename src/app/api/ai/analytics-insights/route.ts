@@ -56,7 +56,7 @@ export async function POST(req: NextRequest) {
           content: `Scan analytics snapshot:\n${JSON.stringify(snapshot, null, 2)}\n\nGenerate insights.`,
         },
       ],
-      { maxTokens: 800, temperature: 0.5, jsonMode: true },
+      { maxTokens: 1200, temperature: 0.5, jsonMode: true }, // Increased for detailed insights
     );
 
     const parsed = safeJsonParse(raw);

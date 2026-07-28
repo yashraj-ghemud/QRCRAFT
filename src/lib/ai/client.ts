@@ -173,7 +173,7 @@ async function chatWithModel(
       content: m.contentParts ?? m.content,
     })),
     temperature: opts.temperature ?? 0.7,
-    max_tokens: opts.maxTokens ?? 1024,
+    max_tokens: opts.maxTokens ?? 2048, // Increased from 1024 to 2048
   };
 
   // Only add JSON mode for providers/models that support it

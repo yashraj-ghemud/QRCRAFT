@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
 
     const raw = await chatVision(PROMPT, body.image, {
       temperature: 0.1,
-      maxTokens: 600,
+      maxTokens: 1000, // Increased for complete QR content extraction
     });
 
     // Parse the structured response

@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
           content: `Category: ${body.category}\nContent snippet: ${snippet}\n\nSuggest a design.`,
         },
       ],
-      { maxTokens: 400, temperature: 0.8, jsonMode: true },
+      { maxTokens: 800, temperature: 0.8, jsonMode: true }, // Increased for design details
     );
 
     const parsed = safeJsonParse(raw);

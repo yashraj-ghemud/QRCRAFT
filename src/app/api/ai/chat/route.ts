@@ -94,7 +94,7 @@ export async function POST(req: NextRequest) {
 
     // Call the model — strict: only use the user-authorized models
     const raw = await chat(chatMessages, {
-      maxTokens: 800,
+      maxTokens: 1600, // Increased for complete responses
       temperature: 0.7,
     });
 
