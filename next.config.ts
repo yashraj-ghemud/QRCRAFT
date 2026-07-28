@@ -8,10 +8,6 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false, // Enable type checking in production
   },
 
-  eslint: {
-    ignoreDuringBuilds: false, // Enable linting in production
-  },
-
   reactStrictMode: true, // Enable strict mode for better error detection
 
   // Suppress hydration warnings caused by browser extensions (Bitwarden, etc.)
